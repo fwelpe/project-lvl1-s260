@@ -1,16 +1,23 @@
 {
   "name": "brain-games-fwlpe",
-  "version": "1.0.0",
+  "version": "0.0.3",
   "description": "educationalProject",
   "main": "index.js",
   "bin": {
-    "hexlet": "dist/bin/hexlet.js"
+    "brain-games": "dist/bin/brain-games.js"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "babel-node": "babel-node",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fwlpe/project-lvl1-s260.git"
   },
   "author": "fwlpe",
   "license": "ISC",
