@@ -1,5 +1,5 @@
-#!/usr/bin/node
-import index from '..';
+#!/usr/bin/env node
+import getName from '..';
  
 console.log('Welcome to the Brain Games!')
-index();
+getName();
