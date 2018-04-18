@@ -33,6 +33,7 @@
     "eslint-plugin-import": "^2.11.0"
   },
   "dependencies": {
+    "eslint-plugin-babel": "^5.0.0",
     "readline-sync": "^1.4.9"
   }
 }
