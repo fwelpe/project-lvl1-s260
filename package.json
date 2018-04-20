@@ -1,6 +1,6 @@
 {
   "name": "brain-games-fwlpe",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "educationalProject",
   "main": "index.js",
   "bin": {
