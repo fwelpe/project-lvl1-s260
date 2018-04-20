@@ -1,8 +1,5 @@
 #!/usr/bin/env node
-import { braincalcRules, braincalc } from '../games/brain-calc-code';
-import * as start from '..';
+import { braincalc, rule } from '../games/brain-calc-code';
+import runGame from '..';
 
-start.greetings();
-braincalcRules();
-const name = start.getName();
-braincalc(name);
+runGame(braincalc, rule);

@@ -1,7 +1,7 @@
 install:
 	npm install
 
-start:
+startbc:
 	npm run babel-node -- src/bin/brain-calc.js
 
 tmp:

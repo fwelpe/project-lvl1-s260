@@ -1,8 +1,5 @@
 #!/usr/bin/env node
-import { brainevenRules, braineven } from '../games/brain-even-code';
-import * as start from '..';
+import { braineven, rule } from '../games/brain-even-code';
+import runGame from '..';
 
-start.greetings();
-brainevenRules();
-const name = start.getName();
-braineven(name);
+runGame(braineven, rule);
