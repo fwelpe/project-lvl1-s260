@@ -1,4 +1,4 @@
-import randomInt from '../math';
+import { randomInt } from '../math';
 
 const braineven = () => {
   const rule = 'Answer "yes" if number even otherwise answer "no".';

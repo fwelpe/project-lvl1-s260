@@ -1,4 +1,4 @@
-import randomInt from '../math';
+import { randomInt } from '../math';
 
 const braincalc = () => {
   const rule = 'What is the result of the expression?';

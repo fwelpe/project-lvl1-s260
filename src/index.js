@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
 
-const runGame = (currentGame) => {
+const runGame = (gameLogic) => {
   console.log('Welcome to the Brain Games!');
-  console.log(`${currentGame().rule}\n`);
+  console.log(`${gameLogic().rule}\n`);
   const username = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${username}!\n`);
   const iter = (attempt) => {
@@ -10,7 +10,7 @@ const runGame = (currentGame) => {
       console.log(`Congratulations, ${username}!`);
       return true;
     }
-    const questionAnswerArray = currentGame();
+    const questionAnswerArray = gameLogic();
     console.log(`Question: ${questionAnswerArray.question}`);
     const answer = readlineSync.question('Your answer: ');
     if (answer === questionAnswerArray.result) {
