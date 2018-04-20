@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { randomInt } from '../math';
+import randomInt from '../math';
 
 const brainevenRules = () => console.log('Answer "yes" if number even otherwise answer "no".');
 

@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { randomInt } from '../math';
+import randomInt from '../math';
 
 const braincalcRules = () => console.log('What is the result of the expression?');
 
@@ -26,7 +26,7 @@ const braincalc = (playerName) => {
     }
     console.log(question);
     const answer = readlineSync.question('Your answer: ');
-    if (answer == result) {
+    if (answer === result) {
       console.log('Correct!');
       return iter(attempt + 1);
     }
