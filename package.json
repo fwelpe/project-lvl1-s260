@@ -1,11 +1,12 @@
 {
   "name": "brain-games-fwlpe",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "educationalProject",
   "main": "index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js"
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js"
   },
   "files": [
     "dist"
@@ -34,7 +35,6 @@
     "eslint-plugin-import": "^2.11.0"
   },
   "dependencies": {
-    "eslint-plugin-babel": "^5.0.0",
     "readline-sync": "^1.4.9"
   }
 }
