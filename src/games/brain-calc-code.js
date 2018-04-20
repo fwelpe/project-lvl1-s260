@@ -1,8 +1,7 @@
 import randomInt from '../math';
 
-const rule = 'What is the result of the expression?';
-
 const braincalc = () => {
+  const rule = 'What is the result of the expression?';
   const opr = randomInt(0, 2);
   const num1 = randomInt(1, 99);
   const num2 = randomInt(1, 99);
@@ -22,7 +21,8 @@ const braincalc = () => {
   return {
     question,
     result,
+    rule,
   };
 };
 
-export { braincalc, rule };
+export default braincalc;
