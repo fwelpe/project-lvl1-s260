@@ -10,6 +10,9 @@ gcd:
 be:
 	npm run babel-node -- src/bin/brain-even.js
 
+bb:
+	npm run babel-node -- src/bin/brain-balance.js
+
 tmp:
 	npm run babel-node -- tmp
 

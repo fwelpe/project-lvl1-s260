@@ -20,7 +20,7 @@ const getMutualDivider = (num1, num2) => {
 const gcd = (num1, num2) => {
   const iter = (num1iter, num2iter, res) => {
     const divider = getMutualDivider(num1iter, num2iter);
-    if (divider !== false) {
+    if (!divider) {
       return iter(num1iter / divider, num2iter / divider, res * divider);
     }
     return res;
@@ -28,7 +28,7 @@ const gcd = (num1, num2) => {
   return iter(num1, num2, 1);
 };
 
-const gcdEuclid = (num1, num2) => {
+const gcdEuclidOld = (num1, num2) => {
   const greater = num1 > num2 ? num1 : num2;
   const smaller = num1 < num2 ? num1 : num2;
   const iter = (divident, divider) => {
@@ -41,4 +41,25 @@ const gcdEuclid = (num1, num2) => {
   return iter(greater, smaller);
 };
 
-export { gcd, randomInt, gcdEuclid };
+const gcdEuclid = (num1, num2) => (num2 ? gcdEuclid(num2, num1 % num2) : num1);
+
+const normalizeNum = (num) => {
+  const StrArray = String(num).split('');
+  const IntArray = StrArray.map(Number);
+  const SortedArray = IntArray.sort();
+  const iter = (arr) => {
+    if (arr[arr.length - 1] - arr[0] <= 1) {
+      return arr;
+    }
+    let workArr = arr;
+    workArr[0] += 1;
+    workArr[workArr.length - 1] -= 1;
+    workArr = workArr.sort();
+    return iter(workArr);
+  };
+  let result = iter(SortedArray);
+  result = result.join('');
+  return result;
+};
+
+export { gcd, randomInt, gcdEuclid, gcdEuclidOld, normalizeNum };

@@ -1,8 +1,9 @@
 import { randomInt } from '../math';
 import runGame from '../index';
 
+const rule = 'What is the result of the expression?';
+
 const braincalc = () => {
-  const rule = 'What is the result of the expression?';
   const opr = randomInt(0, 2);
   const num1 = randomInt(1, 99);
   const num2 = randomInt(1, 99);
@@ -22,10 +23,9 @@ const braincalc = () => {
   return {
     question,
     result,
-    rule,
   };
 };
 
-const braincalcStart = () => runGame(braincalc);
+const braincalcStart = () => runGame(braincalc, rule);
 
 export default braincalcStart;
