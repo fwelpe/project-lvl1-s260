@@ -1,4 +1,5 @@
 import { randomInt } from '../math';
+import runGame from '../index';
 
 const braincalc = () => {
   const rule = 'What is the result of the expression?';
@@ -25,4 +26,6 @@ const braincalc = () => {
   };
 };
 
-export default braincalc;
+const braincalcStart = () => runGame(braincalc);
+
+export default braincalcStart;

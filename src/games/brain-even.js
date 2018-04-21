@@ -1,4 +1,5 @@
 import { randomInt } from '../math';
+import runGame from '../index';
 
 const braineven = () => {
   const rule = 'Answer "yes" if number even otherwise answer "no".';
@@ -11,4 +12,6 @@ const braineven = () => {
   };
 };
 
-export default braineven;
+const brainevenStart = () => runGame(braineven);
+
+export default brainevenStart;

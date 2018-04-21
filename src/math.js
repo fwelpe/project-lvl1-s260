@@ -4,22 +4,41 @@ const randomInt = (min, max) => {
   return rand;
 };
 
-const getMutualDivider = (num1, num2, divider) => {
-  if (num1 % divider === 0 && num2 % divider === 0) {
-    return divider;
-  }
-  if (num1 <= divider || num2 <= divider) {
-    return false;
-  }
-  return getMutualDivider(num1, num2, divider + 1);
+const getMutualDivider = (num1, num2) => {
+  const iter = (num1iter, num2iter, divider) => {
+    if (num1iter % divider === 0 && num2iter % divider === 0) {
+      return divider;
+    }
+    if (num1iter < divider || num2iter < divider) {
+      return false;
+    }
+    return iter(num1iter, num2iter, divider + 1);
+  };
+  return iter(num1, num2, 2);
 };
 
-const gcd = (num1, num2, res) => {
-  const divider = getMutualDivider(num1, num2, 2);
-  if (divider !== false) {
-    return gcd(num1 / divider, num2 / divider, res * divider);
-  }
-  return res;
+const gcd = (num1, num2) => {
+  const iter = (num1iter, num2iter, res) => {
+    const divider = getMutualDivider(num1iter, num2iter);
+    if (divider !== false) {
+      return iter(num1iter / divider, num2iter / divider, res * divider);
+    }
+    return res;
+  };
+  return iter(num1, num2, 1);
 };
 
-export { gcd, randomInt, getMutualDivider };
+const gcdEuclid = (num1, num2) => {
+  const greater = num1 > num2 ? num1 : num2;
+  const smaller = num1 < num2 ? num1 : num2;
+  const iter = (divident, divider) => {
+    const result = divident % divider;
+    if (result === 0) {
+      return divider;
+    }
+    return iter(divider, result);
+  };
+  return iter(greater, smaller);
+};
+
+export { gcd, randomInt, gcdEuclid };
