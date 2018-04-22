@@ -16,6 +16,9 @@ bb:
 bp:
 	npm run babel-node -- src/bin/brain-progression.js
 
+bpr:
+	npm run babel-node -- src/bin/brain-prime.js
+
 tmp:
 	npm run babel-node -- tmp
 

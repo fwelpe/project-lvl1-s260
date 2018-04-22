@@ -4,43 +4,6 @@ const randomInt = (min, max) => {
   return rand;
 };
 
-const getMutualDivider = (num1, num2) => {
-  const iter = (num1iter, num2iter, divider) => {
-    if (num1iter % divider === 0 && num2iter % divider === 0) {
-      return divider;
-    }
-    if (num1iter < divider || num2iter < divider) {
-      return false;
-    }
-    return iter(num1iter, num2iter, divider + 1);
-  };
-  return iter(num1, num2, 2);
-};
-
-const gcd = (num1, num2) => {
-  const iter = (num1iter, num2iter, res) => {
-    const divider = getMutualDivider(num1iter, num2iter);
-    if (!divider) {
-      return iter(num1iter / divider, num2iter / divider, res * divider);
-    }
-    return res;
-  };
-  return iter(num1, num2, 1);
-};
-
-const gcdEuclidOld = (num1, num2) => {
-  const greater = num1 > num2 ? num1 : num2;
-  const smaller = num1 < num2 ? num1 : num2;
-  const iter = (divident, divider) => {
-    const result = divident % divider;
-    if (result === 0) {
-      return divider;
-    }
-    return iter(divider, result);
-  };
-  return iter(greater, smaller);
-};
-
 const gcdEuclid = (num1, num2) => (num2 ? gcdEuclid(num2, num1 % num2) : num1);
 
 const normalizeNum = (num) => {
@@ -78,4 +41,28 @@ const progressionArr = (startNum, step, intsInArr) => {
   return iter([startNum], 2);
 };
 
-export { gcd, randomInt, gcdEuclid, gcdEuclidOld, normalizeNum, progressionArr };
+const isPrime = (num) => {
+  if (num <= 0 || !Number.isInteger(num)) {
+    return 'no';
+  }
+  const iter = (checknum) => {
+    if (checknum >= num) {
+      return 'yes';
+    }
+    if (num % checknum === 0) {
+      return 'no';
+    }
+    return iter(checknum + 1);
+  };
+  return iter(2);
+};
+
+const genPrm = () => {
+  const randomNum = randomInt(2, 1000);
+  if (isPrime(randomNum) === 'yes') {
+    return randomNum;
+  }
+  return genPrm();
+};
+
+export { randomInt, gcdEuclid, normalizeNum, progressionArr, isPrime, genPrm };
