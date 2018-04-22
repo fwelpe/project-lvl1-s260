@@ -42,15 +42,15 @@ const progressionArr = (startNum, step, intsInArr) => {
 };
 
 const isPrime = (num) => {
-  if (num <= 0 || !Number.isInteger(num)) {
-    return 'no';
+  if (num <= 1 || !Number.isInteger(num)) {
+    return false;
   }
   const iter = (checknum) => {
     if (checknum >= num) {
-      return 'yes';
+      return true;
     }
     if (num % checknum === 0) {
-      return 'no';
+      return false;
     }
     return iter(checknum + 1);
   };
@@ -59,7 +59,7 @@ const isPrime = (num) => {
 
 const genPrm = () => {
   const randomNum = randomInt(2, 1000);
-  if (isPrime(randomNum) === 'yes') {
+  if (isPrime(randomNum)) {
     return randomNum;
   }
   return genPrm();

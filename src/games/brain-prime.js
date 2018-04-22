@@ -4,11 +4,16 @@ import runGame from '../index';
 const rule = "Is this number prime? Answer 'yes' or 'no'.";
 
 const brainprime = () => {
-  let question = randomInt(-100, 300);
-  if (randomInt(0, 1) === 1) {
+  let question;
+  let result;
+  const randomChoose = randomInt(0, 1);
+  if (randomChoose) {
+    question = randomInt(-50, 1000);
+    result = isPrime(question) ? 'yes' : 'no';
+  } else {
     question = genPrm();
+    result = 'yes';
   }
-  const result = isPrime(question);
   return {
     question,
     result,
