@@ -62,4 +62,20 @@ const normalizeNum = (num) => {
   return result;
 };
 
-export { gcd, randomInt, gcdEuclid, gcdEuclidOld, normalizeNum };
+const progressionArr = (startNum, step, intsInArr) => {
+  if (step === 0) {
+    return false;
+  }
+  const iter = (arr, stepNum) => {
+    if (stepNum > intsInArr) {
+      return arr;
+    }
+    const arrIter = arr;
+    const lastInArr = arr[arr.length - 1];
+    arrIter.push(lastInArr + step);
+    return iter(arrIter, stepNum + 1);
+  };
+  return iter([startNum], 2);
+};
+
+export { gcd, randomInt, gcdEuclid, gcdEuclidOld, normalizeNum, progressionArr };

@@ -13,6 +13,9 @@ be:
 bb:
 	npm run babel-node -- src/bin/brain-balance.js
 
+bp:
+	npm run babel-node -- src/bin/brain-progression.js
+
 tmp:
 	npm run babel-node -- tmp
 
